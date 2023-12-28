@@ -1,0 +1,26 @@
+<div class="container d-flex h-100 align-items-center justify-content-center">
+  <div class="card text-bg-info text-center my-3" style="width: 20rem">
+    <form #f="ngForm" (submit)="onSubmit()">
+      <input
+        class="form-control bg-light"
+        type="text"
+        name="city"
+        [(ngModel)]="cityName"
+        placeholder="Search city..."
+      />
+    </form>
+    <div class="card-header">
+      <h1>{{ cityName | titlecase }}</h1>
+      <img src="{{ icon }}" alt="weather icon" />
+      <h1>{{ temp }} °C</h1>
+    </div>
+    <div class="card-body">
+      <p class="card-text">Summary: {{ summary | titlecase }}</p>
+      <p class="card-text">Temperature: {{ temp }} °C</p>
+      <p class="card-text">Min Temperature: {{ minTemp }} °C</p>
+      <p class="card-text">Max Temperature: {{ maxTemp }} °C</p>
+      <p class="card-text">Wind: {{ wind }} km/h</p>
+      <p class="card-text">Humidity: {{ humidity }} %</p>
+    </div>
+  </div>
+</div>
